@@ -137,11 +137,7 @@ function handleItemAdd() {
     // get email (this is auto stored by firebase when the user is logged in)
     const userEmail = auth.currentUser.email;
 
-    /* STEP 4: Call function storeToDoItem which is located in file 'StoreToDoItem' and pass in the following 
-    parameters:
-    1) userID
-    2) userEmail 
-    3) todoItemText*/
+    storeToDoItem(userId, userEmail, todoItemText);
 
     // clear the input value after storing the data
     textInput.value = "";
@@ -156,6 +152,7 @@ function handleItemAdd() {
     parameters:
     1) userID 
     */
+   fetchAndDisplayAllToDoItems(userId);
 }
 
 document.getElementById("new-todo-btn").addEventListener("click", handleItemAdd);
